@@ -1,0 +1,222 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinONE</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="images/Logo1.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <ul class="dropdown-content large-dropdown">
+                        <li class="blog-item">
+                            <img src="images/video-blog.png" alt="Blog Icon" class="blog-icon">
+                            <div class="blog-text">
+                                <a href="blog.html">Blog</a>
+                                <p class="blog-description">
+                                    Insights and guidance on how to efficiently manage and streamline their finances by integrating multiple bank accounts into a single, unified platform.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="questions-item">
+                            <img src="images/questions-and-answers.png" alt="questions Icon" class="questions-icon">
+                            <div class="questions-text">
+                                <a href="#">Questions</a>
+                                <p class="questions-description">
+                                    Find answers to your questions on multibanking and learn how FinONE can streamline your financial management.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Support</a>
+                    <ul class="dropdown-content large-dropdown">
+                        <li class="contact-item">
+                            <img src="images/communicate.png" alt="Contact Icon" class="contact-icon">
+                            <div class="contact-text">
+                                <a href="#">Contact Us</a>
+                                <p class="contact-description">
+                                    Reach out for assistance, inquiries, or feedback regarding the services offered.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="knowledge-item">
+                            <img src="images/frequently-asked-questions.png" alt="Knowledge Icon" class="knowledge-icon">
+                            <div class="knowledge-text">
+                                <a href="#">Knowledge Base</a>
+                                <p class="knowledge-description">
+                                    Find comprehensive answers to frequently asked questions about our services and features.
+                                </p>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a></li>
+            </ul>            
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box login">
+            <div class="form-details">
+                <h2>Welcome Back</h2>
+                <p>Please log in using your personal information to stay connected with us.</p>
+            </div>
+            <div class="form-content">
+                <h2>LOGIN</h2>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" required>
+                        <label>UserID</label>
+                    </div>
+                    <div class="input-field password-container">
+                        <input type="password" id="login-password" required>
+                        <label>Password</label>
+                        <i class="eye-icon material-symbols-rounded" id="toggle-password">visibility</i> <!-- Eye icon -->
+                    </div>
+                    <a href="#" class="forgot-pass-link">Forgot password?</a>
+                    <button type="submit">Log In</button>
+                </form>
+                <div class="error-message" style="display: none;"></div>
+                <div class="bottom-link">
+                    Don't have an account?
+                    <a href="signup.html" id="signup-link">Signup</a>
+                </div>
+            </div>
+        </div>
+        <!-- Forgot Password Popup -->
+         <div id="forgotPasswordPopup" class="form-popup">
+            <button class="close-btn">&times;</button>
+            <div class="form-content">
+                <h2>Forgot Password</h2>
+                <form>
+                    <input type="email" placeholder="Enter your email" required />
+                    <button type="submit">Reset Password</button>
+                </form>
+                <div class="bottom-link">
+                    <a href="#" class="back-to-login">Back to Login</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form id="signupForm" method="POST" action="http://127.0.0.1:4000/signup">
+                    <div class="name-fields">
+                        <div class="input-field">
+                            <input type="text" name="first_name" required />
+                            <label>First Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="last_name" required />
+                            <label>Last Name</label>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="username" required />
+                        <label>Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" name="phone" id="phone" required pattern="\d{10}" maxlength="10">
+                        <label>Phone Number</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" id="password" required>
+                        <label>Create Password</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="confirmPassword" id="confirm-password" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="error-message" style="color: red; display: none;"></div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy" required>
+                        <label for="policy">
+                            I agree to the
+                            <a href="terms.html" class="option" target="_blank">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="#" id="login-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <script>
+        const signupForm = document.getElementById('signupForm');
+        
+        signupForm.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent default form submission
+    
+            const formData = new FormData(signupForm);
+            const data = {
+                first_name: formData.get('first_name'),
+                last_name: formData.get('last_name'),
+                email: formData.get('email'),
+                username: formData.get('username'),
+                phone: formData.get('phone'),
+                password: formData.get('password')
+            };
+    
+            // Validate password matching
+            if (data.password !== formData.get('confirmPassword')) {
+                alert('Passwords do not match.');
+                return;
+            }
+    
+            try {
+                const response = await fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+    
+                const result = await response.json();
+                if (response.status === 201 && result.redirect) {
+                    // Signup successful and redirect flag is true
+                    alert(result.message);  // Display success message
+                    window.location.href = '/index';  // Redirect to login page
+                } else {
+                    // Error occurred or redirect flag is false
+                    alert(result.message || "An error occurred during signup.");
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert("An error occurred. Please try again later.");
+            }
+        });
+    </script>    
+</body>
+</html>

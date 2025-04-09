@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinONE - Sign Up</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="hamburger-btn material-symbols-rounded">menu</span>
+            <a href="#" class="logo">
+                <img src="images/Logo1.jpg" alt="logo">
+            </a>
+            <ul class="links">
+                <span class="close-btn material-symbols-rounded">close</span>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+            <button class="login-btn">LOG IN</button>
+        </nav>
+    </header>
+
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup">
+        <span class="close-btn material-symbols-rounded">close</span>
+        <div class="form-box signup">
+            <div class="form-details">
+                <h2>Create Account</h2>
+                <p>To become a part of our community, please sign up using your personal information.</p>
+            </div>
+            <div class="form-content">
+                <h2>SIGNUP</h2>
+                <form id="signupForm" method="POST" action="http://127.0.0.1:4000/signup">
+                    <div class="name-fields">
+                        <div class="input-field">
+                            <input type="text" name="first_name" required />
+                            <label>First Name</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="last_name" required />
+                            <label>Last Name</label>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" required />
+                        <label>Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="username" required />
+                        <label>Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" name="phone" id="phone" required pattern="\d{10}" maxlength="10">
+                        <label>Phone Number</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" id="password" required>
+                        <label>Create Password</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="confirmPassword" id="confirm-password" required>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="error-message" style="color: red; display: none;"></div>
+                    <div class="policy-text">
+                        <input type="checkbox" id="policy" required>
+                        <label for="policy">
+                            I agree to the
+                            <a href="terms.html" class="option" target="_blank">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </form>
+
+                <div class="bottom-link">
+                    Already have an account? 
+                    <a href="index.html">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
